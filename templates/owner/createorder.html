@@ -1,0 +1,102 @@
+{% extends 'rootpage.html' %}
+{%load static%}
+{% block content%}
+<div>
+    <br>
+    <h1 style="padding-left: 350px;" id="login-header">
+        Add Order
+    </h1>
+    
+    
+    <div class="form-group" style="width: 950px;">
+        <div style="width: 800px">
+            <hr>
+    
+        </div>
+        
+        <form action="" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            <div style="display: flex; align-items: stretch;">
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        Customer
+                    </label>
+
+                    <select class="form-control" id="login-input" name="customer">
+                        {% for i in customer%}
+                        <option value={{i.id}}>{{i.username}}</option>
+                        {%endfor%}
+                    </select>
+                </div>
+                <br>
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        Product
+                    </label>
+
+                    <select class="form-control" id="login-input" name="item">
+                        {% for i in product%}
+                        <option value={{i.id}}>{{i.title}}</option>
+                        {%endfor%}
+                    </select>
+                </div>
+
+            </div>
+
+            <br>
+            <div style="display: flex; align-items: stretch;">
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        Status
+                    </label>
+
+                    <select name="status" class="form-control" id="login-input">
+                        <option value="Pending">Pending</option>
+                        <option value="In Process">In Process</option>
+                        <option value="Completed">Completed</option>
+    
+                    </select>
+                </div>
+                
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        Quantity
+                    </label>
+
+                    <input class="form-control"  id="login-input" type="text" name="quantity" class="form-control" />
+
+             </textarea>
+             <br>
+                </div>
+            </div>
+            <br>
+            <div style="display: flex; align-items: stretch;">
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        Address
+                    </label>
+
+                    <input class="form-control"  id="login-input" type="text" name="address" class="form-control" />
+                </div>
+                
+
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        City
+                    </label>
+
+                    <input class="form-control"  id="login-input" type="text" name="city" class="form-control" />
+                </div>
+            </div>
+            <br>
+            <br>
+            <div>
+                <input style="margin-top: 8px; margin-left: 200px; width: 130px;" id="login-button" value="Add Order" type="submit" name="submit"
+                    class="form-control btn btn-primary mb-2" />
+                <button style="margin-left: 10px; " id="login-button" class="btn btn-secondary">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+{% endblock content%}

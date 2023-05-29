@@ -1,0 +1,112 @@
+{% extends 'rootpage.html'%}
+{% load static %}
+
+{%block content %}
+
+
+
+
+<div>
+    <br>
+    <h1 style="padding-left: 400px;" id="login-header">
+        {% block title%} Update customer Details {% endblock title%}
+    </h1>
+
+
+    <div class="addproduct form-group" style="width: 950px;">
+        <div style="width: 800px">
+            <hr>
+
+        </div>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            <div style="display: flex; align-items: stretch;">
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        Name:
+                    </label>
+
+                    <input id="login-input" type="text" class="form-control" name="name" value={{customer.name}}
+                        placeholder="Full name" />
+
+
+                </div>
+                <br>
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        Email
+                    </label>
+
+                    <input id="login-input" type="text" class="form-control" name="email" value={{customer.email}}
+                        placeholder="Email" />
+                </div>
+
+            </div>
+
+            <br>
+            <div style="display: flex; align-items: stretch;">
+
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        Phone number
+                    </label>
+
+                    <input id="login-input" type="text" class="form-control" name="phone" value={{customer.phone}}
+                        placeholder="Contact" />
+                    <br>
+                </div>
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        Username
+                    </label>
+
+                    <input id="login-input" type="text" class="form-control" name="username" value={{customer.username}} placeholder="Username" />
+                    <br>
+                </div>
+            </div>
+            <br>
+            <div style="display: flex; align-items: stretch;">
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        Password
+                    </label>
+
+                    <input id="login-input" class="form-control" type="password" value={{customer.password}} name="password" placeholder="Password" />
+                </div>
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        Confirm Password
+                    </label>
+
+                    <input id="login-input" class="form-control" type="password"   placeholder="Confirm Password" />
+                </div>
+
+
+            </div>
+            <div style="display: flex; align-items: stretch;">
+                <div class="form-field" style="flex: 1;">
+                    <label id="login-label">
+                        Reward Point
+                    </label>
+
+                    <input class="form-control " id="login-input" type="reward_point" value={{customer.reward_point}} name="reward_point" />
+                </div>
+            </div>
+
+            
+            <br>
+            <br>
+            <br>
+            <div>
+                <input style="margin-top: 8px; margin-left: 200px; width: 130px;" id="login-button"
+                    value="Update Customer" type="submit" name="submit" class="form-control btn btn-primary mb-2" />
+                <button style="margin-left: 10px; " id="login-button" class="btn btn-secondary">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+{%endblock content %}
+

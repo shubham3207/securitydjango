@@ -1,0 +1,77 @@
+{% extends 'rootpage.html' %}
+{% load static %}
+
+{%block content%}
+
+<head>
+  <meta charset="UTF-8">
+  <!---<title> Responsive Registration Form | CodingLab </title>--->
+  <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<br>
+<br>
+<div style=" padding-left: 500px;">
+  <div class="container-reg">
+    <br>
+    <div class="title" style="color: orangered;" style="padding-left: 30px"><b>Registration</b></div>
+    <div class="content pt-5">>
+      <form action="" method="post">
+        {% csrf_token %}
+
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details"><b>Full name</b></span>
+            <input type="text" name="name" placeholder="Enter your Full name" required>
+          </div>
+
+          <div style="padding-left: 20px;" class="input-box">
+            <span class="details"><b>Email</b></span>
+            <input type="text" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details"><b>Phone Number</b></span>
+            <input type="text" name="phone" placeholder="Enter your number" required>
+          </div>
+
+          <div style="padding-left: 20px;" class="input-box">
+            <span class="details"><b>Username</b></span>
+            <input type="text" name="username" placeholder="Enter your Username" required>
+          </div>
+          <div class="input-box">
+            <span class="details"><b>Password</b></span>
+            <input type="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <div style="padding-left: 20px;" class="input-box">
+            <span class="details"><B>Confirm Password</b></span>
+            <input type="password" name="confirmpassword" placeholder="Confirm your password" required>
+          </div>
+        </div>
+
+        <div class="button">
+          <input type="submit" class="btn btn-primary" style="margin-right: 15px;" value="Register">
+          <button class="btn btn-secondary"> Cancel</button>
+        </div>
+        <br>
+      </form>
+
+      {% for message in messages %}
+      <script>
+        var url = '/login/'
+        alert('{{message}}')
+        if ('{{message}}' == 'Your account has been registered') {
+          window.location.href = "{%url 'login'%}"
+
+        }
+
+
+      </script>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+<br>
+<br>
+{% endblock %}

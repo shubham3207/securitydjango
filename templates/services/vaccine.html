@@ -1,0 +1,72 @@
+{% extends 'rootpage.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+
+    <link rel="stylesheet" href="{% static 'css/vaccine.css' %}" />
+
+</head>
+
+
+<!-- vaccine part starts -->
+<div style="min-height: 100vh;">
+
+
+<section id="Vaccination">
+    <div class="container">
+        <div class="title">
+            <h1> Vaccination </h1>
+            <p>All those who care for animals, including pet owners and farmers have a duty to protect the
+                health and welfare of animals under their care. Please visit our store to get your furry
+                friend vaccinated!!!</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <img src="{% static 'img/images/catVacc.jpg' %}" alt="cat image" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"> CAT </h5>
+                        <p class="card-text">Your kitten will require two series of vaccines to get started,
+                            the first at nine weeks and the second at three months. After that, kittens and
+                            cats usually require 'booster' immunizations once a year.</p>
+                        <a href="#"> CAT </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <img src="{% static 'img/images/birdVacc.png' %}" alt="cat image" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"> BIRD </h5>
+                        <p class="card-text">Polyomavirus vaccine is commercially marketed. Some avian
+                            doctors advise initiating vaccination at 21 days of age and maintaining the
+                            vaccine every two weeks. They then adhere to the instruction that the bird take
+                            the immunization once a year.</p>
+                        <a href="#"> BIRD </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <img src="{% static 'img/images/dogVacc.png' %}" alt="cat image" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"> DOG </h5>
+                        <p class="card-text">Vaccines for canine parvovirus, distemper, canine hepatitis,
+                            and rabies are considered core vaccines for dogs. Non-core vaccines are
+                            administered based on the dog's exposure risk. Among these are vaccinations
+                            against Bordetella bronchiseptica, Borrelia burgdorferi.</p>
+                        <a href="#"> DOG </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</div>
+{% endblock%}

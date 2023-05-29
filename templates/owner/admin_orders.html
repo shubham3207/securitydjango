@@ -1,0 +1,94 @@
+{% extends 'owner/admin.html' %}
+
+{%load static%}
+{%block admincontent%}
+<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 23px; display: inline;">
+    Orders
+</h1>
+<a style="padding-left: 800px; display: inline;" href="{% url 'create-order' %}"><button class="btn btn-primary text-right"> Add Order</button></a>
+<br>
+<br>
+<div class="table-responsive">
+    <table class="table table-bordered bg-light" >
+        <thead class="thead-dark ">
+            <tr>
+                <th>customer</th>
+                <th>order</th>
+                <th>city</th>
+                <th>Shipping Address</th>
+                <th>date_added</th>
+                <th>order id</th>
+                <th>status</th>
+                <th>quantity</th>
+                
+                <th>update</th>
+                <th>remove</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+
+            {%for i in orders_products%}
+            <tr>
+                <td>{{i.order.customer}}</td>
+                <td>{{i.item.title}}</td>
+                {%for j in i.order.shipping_set.all%}
+                {%if j %}
+                <td>{{j.city}}</td>
+                <td>{{j.address}}</td>
+                <td>{{j.date_added}}</td>
+                {%else%}
+                <td></td>
+                
+                
+                <td></td>
+                <td></td>
+                {%endif%}
+
+
+                {%endfor%}
+                <td>{{i.order.order_id}}</td>
+                <td>{{i.order.status}}</td>
+                <td>{{i.quantity}}</td>
+
+                <td><a class="btn btn-sm btn-info" href="{% url 'update-order' i.id %}">Update</a></td>
+                <td><button class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Remove</button></td>
+
+        </tr>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        <a href="/owner/delete-orders/{{i.id}}" type="submit" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+
+            {%endfor%}
+
+
+
+
+
+
+        </tbody>
+
+      
+
+    </table>
+</div>
+
+
+{%endblock admincontent%}

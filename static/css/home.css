@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800;900&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+  overflow-x: hidden;
+}
+/* 
+a:not(.detail) {
+  text-decoration: none;
+  color: white;
+} */
+
+a:hover {
+  color: #e7d8e8;
+}
+
+button {
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.navdiv {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* .nav-item dropdown :hover .dropdown-menu{
+  display:inline;
+  background-color: #fd1919;
+  color: rgb(224, 194, 194);
+} */
+
+
+.hbar {
+  /* background-image: url("/static/img/images/heading_image.png"); */
+  background-repeat: no-repeat;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homefoot {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+
+#search {
+  font-size: large;
+  font: arial;
+  height: 37px;
+  width: 400px;
+  margin-left: 50px;
+  text-indent: 20px;
+  border: 2px;
+  border-radius: 10px;
+  position: relative;
+  margin-right: 140px;
+  margin-top: 30px;
+  border: #000 1px solid;
+}
+
+.hbar svg {
+  margin-left: 180px;
+}
+
+.signhome {
+  margin-right: 20px;
+}
+
+#sign {
+  font-size: large;
+  width: 90px;
+  height: 45px;
+
+  border: 2px;
+  border-radius: 16px;
+}
+
+#sign:hover {
+  transform: scale(1.15);
+}
+
+dropdown-menu:hover,
+dropdown-item:hover,
+a:hover {
+  transform: scale(1);
+  background-color: rgb(23, 132, 160);
+}
+
+.nav-item dropdown :hover .dropdown-menu {
+  display: block;
+}
+.nav>li{
+  display: inline-block;
+  
+}
+
+.nav-link{
+  margin-right: 30px;
+}
+
+.page-footer font-small homefoot:hover {
+  transform: scale(1.2);
+}
+
+.navdiv{
+  box-shadow: -24px 29px 21px -8px rgba(59, 59, 82, 0.3);
+  
+}
+
+
+.hometag{
+  /* background-image: linear-gradient(to right top, #456d9c, #a3b3c5, #a7b7c7, #7da2c8, #13171a); */
+background: rgb(255,255,255);
+background-color: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(151,180,145,1) 100%);
+}
+
+.botfoot {
+  background-color: #bbb3b3;
+  border-radius: 10px;
+  height: 30px;
+}
+
+/* .hometag :hover{
+  background-color: aqua;
+} */
+
+/* hover */
+
+
+
+.prodimages {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 50px;
+  background-color: white;
+}
+
+.box:hover {
+  border: solid rgb(223, 223, 223) 1px;
+  background-color: rgb(243, 243, 243);
+  transform: scale(1.05);
+}
+
+.prodimages img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 180px;
+  height: 180px;
+}
+
+.slider {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slider img, button {
+  /* height: 400px; */
+  max-width: 100%;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+}
+
+.box {
+  width: 250px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.prodimages img:hover {
+  border: solid white 1px;
+}
+
+
+.producthome {
+  margin-top: 40px;
+  background-color: white;
+  margin-left: 20px;
+}
+
+.detail {
+  text-decoration: none;
+}
+
+.detail:not(.btn) {
+  color: black;
+}
+
+
+/* categories */
+.card{
+  box-shadow: 12px 12px 2px 1px rgba(0, 153, 255, 0.2);
+  border-radius: 15px;
+}
+
+.card:hover {
+  box-shadow: -12px 12px 2px -1px rgba(80, 131, 189, 0.2);
+  }
+
+  .hover-two:hover  .two {
+    display: block;
+
+    margin-top: 0; 
+}
+
+.hover-one:hover  .one {
+  display: block;
+
+  margin-top: 0; 
+}
+
+.price:hover  .dropdown-menu {
+  display: block;
+
+  margin-top: 0; 
+}
+
+.pets:hover  .dropdown-menu {
+  display: block;
+  margin-left: 140; 
+}
+
+.userhover:hover  .dropdown-menu {
+  display: block;
+  margin-left: 160;
+  box-shadow: none;
+}
+
+
+
+#login-input {
+  width: 300px;
+  color: black;
+  box-shadow: 10px;
+}
+
+.addproduct {
+  margin-left: 400px;
+  margin-top: 40px;
+
+}
+
+.settings:hover  .dropdown-menu {
+  display: block;
+
+  margin-top: 0; 
+}

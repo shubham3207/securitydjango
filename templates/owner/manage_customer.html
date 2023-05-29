@@ -1,0 +1,66 @@
+{% extends 'owner/admin.html' %}
+{% load static %}
+{%block admincontent%}
+<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 23px; display: inline;">
+    Customers
+</h1>
+<a style="padding-left: 800px; display: inline;" href="{% url 'register' %}"><button class="btn btn-secondary"> Add
+        Customer</button></a>
+<br>
+<br>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+               
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>phone</th>
+                <th>date_created</th>
+                <th>Vouchers</th>
+                <th>update</th>
+                <th>remove</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {%for customer in customers%}
+            <tr>
+
+                <td>{{customer.id}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.phone}}</td>
+                <td>{{customer.date_created}}</td>
+                <td>{{customer.reward_point}}</td>
+                <td><a class="btn btn-sm btn-info" href="{% url 'update-customer' customer.id%}">Update</a></td>
+                <td><button class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Remove</button></td>
+
+        </tr>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        <a href="/delete-customer/{{customer.id}}" type="submit" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+
+            {%endfor%}
+        </tbody>
+
+    </table>
+    
+</div>
+{%endblock admincontent%}

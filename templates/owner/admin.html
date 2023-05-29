@@ -1,0 +1,68 @@
+{%extends 'rootpage.html'%}
+{% load static %}
+{%block content%}
+
+<div class="container-fluid">
+    <div class="row">
+        <div style="margin-bottom: 30px;">
+            <p style="font-size: 22; margin-top: 15px;">
+
+            </p>
+        </div>
+
+        <div class="col-lg-2 p-0 sidebar" style="background-color: white; min-height: 100vh;">
+            <aside> 
+                <ul class="list-group">
+
+
+                    <li class="list-group-item list-group-item-action {% if request.path == "/owner-orders/" %} bg-primary text-light {% endif %}" >
+                        <a href="{% url 'owner-orders' %}" style="text-decoration: none;">
+                            <p style="color: black;" class=" {% if request.path == "/owner-orders/" %} text-light {% endif %}">
+                                Orders
+                            </p>
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action {% if request.path == "/manage-customer/" %} bg-primary text-light {% endif %}">
+                        <a href="{% url 'manage-customer'%}" style="text-decoration: none;">
+                            <p style="color: black;"  class=" {% if request.path == "/manage-customer/" %} text-light {% endif %}">
+                                Customers
+                            </p>
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action {% if request.path == "/manage-product/" %} bg-primary {% endif %}"  >
+                        <a href="{% url 'manage-product'%}" style="text-decoration: none;">
+                            <p style="color: black;" class=" {% if request.path == "/manage-product/" %} text-light {% endif %}">
+                                Products
+                            </p>
+
+
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action {% if request.path == "/manage-message/" %} bg-primary {% endif %}"  >
+                        <a href="{% url 'manage-message'%}" style="text-decoration: none;">
+                            <p style="color: black;" class=" {% if request.path == "/manage-message/" %} text-light {% endif %}">
+                                Messages
+                            </p>
+
+
+                        </a>
+                    </li>
+                </ul>
+
+            </aside>
+        </div>
+
+        <div class="col-lg-10  p-3 body-content" style="min-height: 100vh;">
+
+            <div class="col-lg-  8">
+                <span>Hello, {{request.user}}</span>
+
+            </div>
+            {%block admincontent%}
+            {%endblock admincontent%}
+
+        </div>
+
+    </div>
+</div>
+{%endblock content%}

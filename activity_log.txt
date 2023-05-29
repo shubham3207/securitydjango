@@ -1,0 +1,29 @@
+User: rohan007 | Activity: Logged in as rohan007
+
+User: deepak007 | Activity: Registered as deepak007
+User: deepak007 | Activity: Logged in as deepak007
+
+User: deepak007 | Activity: Logged in as deepak007
+User: Anonymous | Activity: Logged out | Username: deepak007
+Logged in as deepak007
+Searched for products: cat | Username: deepak007
+Searched for products: dog | Username: deepak007
+Searched for products: cat | Username: deepak007
+Logged out | Username: deepak007
+Registered as ojooj
+Registered as uuu0007
+Logged in as deepak007
+Logged out | Username: deepak007
+Logged in as rohan007
+Logged out | Username: rohan007
+Logged in as deepak007
+Logged out | Username: deepak007
+Logged in as deepak007
+Logged out | Username: deepak007
+Logged in as deepak007
+Logged out | Username: deepak007
+Logged in as deepak007
+Logged out | Username: deepak0007
+Registered as uttara007
+Logged in as uttara007
+Searched for products: dog | Username: uttara007

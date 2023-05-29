@@ -1,0 +1,120 @@
+body {
+    background-color: white;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:hover {
+    color: #e7d8e8;
+  }
+  
+  button {
+    border-radius: 6px;
+    background-color: #e7d8e8;
+  }
+  
+  .navdiv {
+    height: 50px;
+  }
+  
+  .navlist {
+    margin-right: 30px;
+    /* background-color: aqua; */
+  }
+  
+  .movenav {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .hbar {
+    background-image: url('/static/img/images/heading_image.png' );
+    background-repeat: no-repeat;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    /* display: inline-block; */
+  }
+  
+  .searchbar {
+    /* display: inline-block;
+      width: 30%; 
+      margin-top: 45px;
+      margin-left: 200px; */
+  }
+  
+  #search {
+    font-size: large;
+    font: arial;
+    height: 37px;
+    width: 400px;
+    margin-left: 50px;
+    text-indent: 20px;
+    border: 2px;
+    border-radius: 10px;
+    position: relative;
+    margin-right: 140px;
+    margin-top: 30px;
+  }
+  
+  .hbar svg {
+    margin-left: 180px;
+  }
+  
+  .signhome {
+    margin-right: 20px;
+  }
+  
+  .prodimg img {
+    margin-top: 50px;
+    margin-left: 40px;
+    width: 256px;
+    height: 256px;
+  }
+  
+  .prod_title {
+    margin-top: 50px;
+    font-size: x-large;
+    font-weight: 600;
+  }
+  
+  .price {
+    margin-top: 20px;
+    font-size: larger;
+    font-weight: 600;
+  }
+  
+  .quantitynumber {
+    margin-top: 50px;
+  }
+  
+  .buy {
+    margin-top: 50px;
+  }
+  
+  .addcart {
+    margin-left: 30px;
+  }
+  
+  .aboutprod {
+    margin-top: 50px;
+  }
+  
+  #sign {
+    font-size: large;
+    width: 90px;
+    height: 45px;
+  
+    border: 2px;
+    border-radius: 16px;
+  }
+  
+  #sign:hover {
+    color: white;
+  }

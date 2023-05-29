@@ -1,0 +1,21 @@
+  
+  hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+  }
+
+  .cart-box {
+    box-shadow: hsl(0, 3%, 65%) 0 0 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.cartrow {
+    display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px rgb(47, 38, 38);
+}

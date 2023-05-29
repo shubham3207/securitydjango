@@ -1,0 +1,53 @@
+{% extends 'rootpage.html' %}
+{%load static%}
+
+
+{% block content %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'notification.css' %}" />
+    <title>Happy Paws</title>
+</head>
+
+
+<!-- for images -->
+
+<div class="col-lg-12">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 mt-3 notice">
+            <div class="mt-3 mb-3">
+                <h5>Notifications</h5>
+            </div>
+            <div class="col-sm-10 ">
+                {% for notification in notice %}
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{notification.title}}</h5>
+                        <p class="card-text">{{notification.description}}</p>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <a href="{% url 'delete' notification.id%}" class="btn btn-danger" role="button">
+                                Delete
+                            </a>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+</div>
+
+
+</div>
+<!-- Footer -->
+
+<!-- Footer -->
+</div>
+{% endblock %}

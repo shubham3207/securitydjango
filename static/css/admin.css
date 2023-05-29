@@ -1,0 +1,80 @@
+body {
+    background-color: white;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:hover {
+    color: #e7d8e8;
+  }
+  
+  button {
+    border-radius: 6px;
+    background-color: #e7d8e8;
+  }
+  
+  .navlist {
+    margin-right: 30px;
+  }
+  
+  .movenav {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .hbar {
+    background-image: url("/images/heading_image.png");
+    background-repeat: no-repeat;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    /* display: inline-block; */
+  }
+  
+  .searchbar {
+    /* display: inline-block;
+    width: 30%; 
+    margin-top: 45px;
+    margin-left: 200px; */
+  }
+  
+  #search {
+    font-size: large;
+    font: arial;
+    height: 37px;
+    width: 400px;
+    margin-left: 50px;
+    text-indent: 20px;
+    border: 2px;
+    border-radius: 10px;
+    position: relative;
+    margin-right: 140px;
+    margin-top: 30px;
+  }
+  
+  .hbar svg {
+    margin-left: 180px;
+  }
+  
+  .signhome {
+    margin-right: 20px;
+  }
+  
+  #sign {
+    font-size: large;
+    width: 90px;
+    height: 45px;
+  
+    border: 2px;
+    border-radius: 16px;
+  }
+  
+  #sign:hover {
+    color: white;
+  }

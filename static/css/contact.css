@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800;900&display=swap');
+*{
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+background-color: #fafafa;
+overflow-x: hidden;
+}
+/* 
+a:not(.detail) {
+text-decoration: none;
+color: white;
+} */
+
+a:hover {
+color: #e7d8e8;
+}
+
+button {
+border-radius: 6px;
+background-color: #ffffff;
+}
+
+.navdiv {
+height: 50px;
+}
+
+.navlist {
+margin-right: 30px;
+}
+
+.movenav {
+margin-left: 10px;
+margin-right: 10px;
+}
+
+/* .nav-item dropdown :hover .dropdown-menu{
+display:inline;
+background-color: #fd1919;
+color: rgb(224, 194, 194);
+} */
+
+
+.hbar {
+background-image: url("/products in homepage//images/heading_image.png");
+background-repeat: no-repeat;
+height: 150px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.homefoot {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+text-align: center;
+color: #000;
+}
+
+
+#search {
+font-size: large;
+font: arial;
+height: 37px;
+width: 400px;
+margin-left: 50px;
+text-indent: 20px;
+border: 2px;
+border-radius: 10px;
+position: relative;
+margin-right: 140px;
+margin-top: 30px;
+}
+
+.hbar svg {
+margin-left: 180px;
+}
+
+.signhome {
+margin-right: 20px;
+}
+
+#sign {
+font-size: large;
+width: 90px;
+height: 45px;
+
+border: 2px;
+border-radius: 16px;
+}
+
+#sign:hover {
+transform: scale(1.15);
+}
+
+dropdown-menu:hover,
+dropdown-item:hover,
+a:hover {
+transform: scale(1.2);
+background-color: rgb(23, 132, 160);
+}
+
+.nav-item dropdown :hover .dropdown-menu {
+display: block;
+}
+
+.nav-link{
+margin-right: 130px;
+}
+
+.page-footer font-small homefoot:hover {
+transform: scale(1.2);
+}
+
+.navdiv{
+box-shadow: -24px 29px 21px -8px rgba(59, 59, 82, 0.3);
+
+}
+
+/* .hometag{
+background-image: linear-gradient(to right top, #b5bcc4, #a3b3c5, #91abc7, #7da2c8, #689ac9);
+} */
+
+.botfoot {
+background-color: #bbb3b3;
+border-radius: 10px;
+height: 30px;
+}
+
+.cform{
+    box-shadow: -24px 29px 21px -8px rgba(30, 30, 60, 0.31);
+}
+
+.low{
+    box-shadow: 4px 39px 24px -8px rgba(30, 30, 60, 0.31);
+}
+

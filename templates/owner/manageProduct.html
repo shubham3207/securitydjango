@@ -1,0 +1,76 @@
+{% extends 'owner/admin.html' %}
+
+{%load static%}
+{%block admincontent%}
+<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 23px; display: inline;">
+    Products
+</h1>
+<a style="padding-left: 800px; display: inline;" href="{% url 'create-product' %}"><button
+        class="btn btn-primary text-right"> Add Product</button></a>
+<br>
+<br>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>price</th>
+                <th>image</th>
+                <th>description</th>
+                <th>category</th>
+                <th>Stock</th>
+                <th>update</th>
+                <th>remove</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {%for product in products%}
+            <tr>
+
+                <td>{{product.id}}</td>
+                <td>{{product.title}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.image}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.category}}</td>
+                {% if product.stock_quantity > 0 %}
+                <td>In Stock</td>
+                {%else%}
+                <td>Out of Stock</td>
+                {%endif%}
+                <td><a class="btn btn-sm btn-info" href="{% url 'update-product' product.id %}">Update</a></td>
+                <td><button class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Remove</button></td>
+
+            </tr>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Delete?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                            <a href="/delete-product/{{product.id}}" type="submit" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                {%endfor%}
+        </tbody>
+
+    </table>
+
+
+</div>
+
+
+{%endblock admincontent%}

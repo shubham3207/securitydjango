@@ -1,0 +1,78 @@
+{% extends 'rootpage.html' %}
+{% load static %}
+
+{% block content%}
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/pethostel.css' %}" />
+    <title> Vaccine page - {% block title %}{% endblock %} </title>
+</head>
+
+
+
+
+            <!-- vaccine part starts -->
+
+            <section id="Vaccination">
+                <div class="container">
+                    <div class="title">
+                        <h1> PET HOSTEL </h1>
+                        <p>All those pet owners who care for their pets, have a duty to protect the health and welfare
+                            of their furry friend even when they've to go out of town. Please visit our store to get
+                            your furry friend a cozy place to live in when you're out of home!!!</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <img src="{%static 'img/images/pethostel.png' %}" alt="cat image" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b> PET HOSTEL</b> </h5>
+                                    <p class="card-text">Pet Hostel is a pet boarding house for your dear pet when you
+                                        have to go somewhere but don’t have a place to leave them. Pet Hostels are the
+                                        frontiers of luxurious lodging settings for all kinds of pets.</p>
+                                    <!-- <a href="#"> CAT </a> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <img src="{% static 'img/images/hostel.png' %}" alt="cat image" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b> HAPPY PAWS HOSTEL </b> </h5>
+                                    <p class="card-text">Happypaw's very own network of pet Hostels are in various
+                                        locations of the city to make the service accessible to people of all places.
+                                        Sign up your pet for the facility from the details on the Happypaw's website and
+                                        drop them off right away at the pet hostel. Our affiliated team will then guide
+                                        the pet into the hostel.</p>
+                                    <!-- <a href="#"> BIRD </a> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <img src="{% static 'img/images/incage.png' %}" alt="cat image" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b> HOSTEL SERVICES </b></h5>
+                                    <p class="card-text">As we are dealing with pets who have special needs of their
+                                        own, Happypaws has considered and taken measures to make the pet Hostel as
+                                        friendly as possible. We are the only pet Hostel in Kathmandu that offers well
+                                        ventilated spaces for pets to have fun and play without getting separation
+                                        anxiety from their owners. Even if your pet shows signs of separation issues,
+                                        our highly trained and skilled professional caretakers can make them feel at
+                                        ease with their long-term experience of handling fragile pets. </p>
+                                    <!-- <a href="#"> DOG </a> -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- vaccine part ends -->
+
+
+{% endblock %}

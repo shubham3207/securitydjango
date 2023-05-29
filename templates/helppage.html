@@ -1,0 +1,108 @@
+{% extends 'rootpage.html' %}
+{% load static %}
+
+{% block content%}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'css/help.css' %}" />
+
+    <title>Happy Paws || fish categories - {% block title %}{% endblock %}</title>
+</head>
+
+
+            <!-- Help Page starts -->
+
+
+            <div class="container pt-5">
+                <div class="help">
+
+
+                    <!-- WITH IMAGES -->
+
+                    <div class="row">
+
+                        <div class="container card mb-3 " style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="{% static 'img/images/visit.png' %}" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Can I visit the store in person to see the pets?</h5>
+                                        <p class="card-text">You can order a pet or product by signing in and clicking
+                                            add to cart and checktout button.</p>
+                                        <p class="card-text"><small class="text-muted">Last updated 1 month ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container card mb-3" data-aos="fade-left" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="{% static 'img/images/order.png' %}" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">How do i order a pet or product?</h5>
+                                        <p class="card-text">Yes, you can visit the store phusically to see the pets.
+                                        </p>
+                                        <p class="card-text"><small class="text-muted">Last updated 6 days mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-5">
+
+                        <div class="container card mb-3" data-aos="fade-right" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="{% static 'img/images/payment.png' %}" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title"> How do I pay for my purchase? </h5>
+                                        <p class="card-text">You can pay for the purchase on delivery or in the store
+                                            itself.</p>
+                                        <p class="card-text"><small class="text-muted">Last updated 4 hours ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container card mb-3" data-aos="fade-left" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="{% static 'img/images/noreturn.png' %}" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Can I return the pets?</h5>
+                                        <p class="card-text">No, you cannot return pets once purchased.</p>
+                                        <p class="card-text"><small class="text-muted">Last updated 3 months ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            
+                <!-- Help Page ends -->
+            <!-- Footer -->
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                AOS.init({
+                    offset: 250,
+                });
+            </script>
+{%endblock content%}
