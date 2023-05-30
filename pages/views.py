@@ -1,4 +1,6 @@
 import imp
+from django.contrib.auth.models import User
+from django.core.cache import cache
 from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse, response
@@ -19,12 +21,25 @@ from firstpro.decorators import *
 from django.contrib.auth.decorators import login_required
 from pages.activity_logger import log_activity
 from datetime import datetime, timedelta
+from django.conf import settings
+
+MAX_LOGIN_ATTEMPTS = 3
+LOCKOUT_DURATION = 300  # 5 minutes in seconds
+SESSION_EXPIRY_MINUTES = 2
 
 def login_view(request):
     users = User.objects.all()
+
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
+
+        # Check if the user is locked out
+        lockout_key = f'lockout_{username}'
+        if cache.get(lockout_key):
+            error_message = "Your account is locked. Please try again later."
+            context = {'users': users, 'error_message': error_message}
+            return render(request, "login.html", context)
 
         user = authenticate(request, username=username, password=password)
 
@@ -39,10 +54,49 @@ def login_view(request):
 
             log_activity(user, f'Logged in as {username}')
 
+            # Reset login attempts
+            cache.delete(lockout_key)
+
+            # Set session expiry
+            request.session.set_expiry(int(timedelta(minutes=SESSION_EXPIRY_MINUTES).total_seconds()))
+
             return redirect('/')
+
+        # Increment failed login attempts
+        increment_login_attempts(username)
+
+        # Check if the user has reached the maximum login attempts
+        if get_login_attempts(username) >= MAX_LOGIN_ATTEMPTS:
+            cache.set(lockout_key, True, LOCKOUT_DURATION)
+            error_message = "Your account is locked. Please try again later."
+        else:
+            error_message = "Invalid username or password."
+
+        context = {'users': users, 'error_message': error_message}
+        return render(request, "login.html", context)
 
     context = {'users': users}
     return render(request, "login.html", context)
+
+
+def increment_login_attempts(username):
+    attempts_key = f'login_attempts_{username}'
+    attempts = cache.get(attempts_key)
+
+    if attempts is None:
+        cache.set(attempts_key, 1, LOCKOUT_DURATION)
+    else:
+        cache.incr(attempts_key)
+
+
+def get_login_attempts(username):
+    attempts_key = f'login_attempts_{username}'
+    attempts = cache.get(attempts_key)
+
+    if attempts is None:
+        attempts = 0
+
+    return attempts
 
 def logoutUser(request):
     username = 'Anonymous'
