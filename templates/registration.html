@@ -30,22 +30,22 @@
         <div class="user-details">
           <div class="input-box">
             <span class="details"><b>Full name</b></span>
-            <input type="text" name="name" placeholder="Enter your Full name" required>
+            <input type="text" name="name" placeholder="Enter your Full name" value="{{ request.POST.name }}"  required>
           </div>
 
           <div class="input-box">
             <span class="details"><b>Email</b></span>
-            <input type="text" name="email" placeholder="Enter your email" required>
+            <input type="text" name="email" placeholder="Enter your email" value="{{ request.POST.email }}" required>
           </div>
 
           <div class="input-box">
             <span class="details"><b>Phone Number</b></span>
-            <input type="text" name="phone" placeholder="Enter your number" required>
+            <input type="text" name="phone" placeholder="Enter your number"  value="{{ request.POST.phone }}"required>
           </div>
 
           <div class="input-box">
             <span class="details"><b>Username</b></span>
-            <input type="text" name="username" placeholder="Enter your Username" required>
+            <input type="text" name="username" placeholder="Enter your Username"   value="{{ request.POST.username }}" required>
           </div>
 
           <div class="input-box">

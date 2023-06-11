@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800;900&display=swap');
 *{
-  font-family: 'Poppins', sans-serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
 body {
@@ -50,26 +50,51 @@ button {
 .homefoot {
   position: relative;
   left: 0;
+  margin: auto;
   bottom: 0;
   width: 100%;
-  text-align: center;
   color: #000;
 }
+.css1{
+  
+  font-size:90px;
+  font-family: georgia;
+  font-style:italic;
+  font-weight:bold;
+  color:purple;
+  text-shadow: 2px 2px 8px #FF0000;
+  position:absolute;
+margin-left:auto;
+margin-right: auto;
+}
 
+.searchbar {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-right: 140px;
+
+}
 
 #search {
-  font-size: large;
-  font: arial;
-  height: 37px;
-  width: 400px;
-  margin-left: 50px;
-  text-indent: 20px;
-  border: 2px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  height: 40px;
+  width: 300px;
+  padding: 0 20px;
+  border: 2px solid #000;
   border-radius: 10px;
-  position: relative;
-  margin-right: 140px;
-  margin-top: 30px;
-  border: #000 1px solid;
+  outline: none;
+}
+
+#search::placeholder {
+  color: #888;
+}
+
+#search:focus {
+  border-color: #555;
 }
 
 .hbar svg {
@@ -107,6 +132,40 @@ a:hover {
   display: inline-block;
   
 }
+.header-container {
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+.hbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  padding: 10px;
+}
+
+.searchbar {
+  flex: .5;
+  padding: 10px;
+  margin-top: 10%;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.login-label {
+  margin-left: 5px;
+}
+
+.dropdown-menu {
+  min-width: 150px;
+}
+
 
 .nav-link{
   margin-right: 30px;
@@ -118,6 +177,7 @@ a:hover {
 
 .navdiv{
   box-shadow: -24px 29px 21px -8px rgba(59, 59, 82, 0.3);
+  width: 100%;
   
 }
 
@@ -132,6 +192,7 @@ background-color: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(151,180,1
   background-color: #bbb3b3;
   border-radius: 10px;
   height: 30px;
+  position:absolute;
 }
 
 /* .hometag :hover{
@@ -266,4 +327,25 @@ background-color: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(151,180,1
   display: block;
 
   margin-top: 0; 
+}
+.btn {
+  /* Define common button styles here */
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  /* Define primary button styles here */
+  background-color: #25cc0b;
+}
+
+.btn-primary:hover {
+  /* Define styles for button hover state */
+  background-color: #07ee86;
 }

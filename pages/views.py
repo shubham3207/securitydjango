@@ -2,7 +2,9 @@ import imp
 from django.contrib.auth.models import User
 from django.core.cache import cache
 from multiprocessing import context
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
+
 from django.http import HttpResponse, JsonResponse, response
 from django.contrib import auth
 from django.contrib.auth.models import User
@@ -25,7 +27,7 @@ from django.conf import settings
 
 MAX_LOGIN_ATTEMPTS = 3
 LOCKOUT_DURATION = 300  # 5 minutes in seconds
-SESSION_EXPIRY_MINUTES = 2
+SESSION_EXPIRY_MINUTES = 1
 
 def login_view(request):
     users = User.objects.all()
@@ -61,6 +63,7 @@ def login_view(request):
             request.session.set_expiry(int(timedelta(minutes=SESSION_EXPIRY_MINUTES).total_seconds()))
 
             return redirect('/')
+            
 
         # Increment failed login attempts
         increment_login_attempts(username)
@@ -121,6 +124,33 @@ from django.contrib.auth.password_validation import (
     NumericPasswordValidator,
 )
 from django.core.exceptions import ValidationError
+from django.core.mail import send_mail
+from django.conf import settings
+from django.template.loader import render_to_string
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_text
+from django.contrib.sites.shortcuts import get_current_site
+from django.contrib.auth.tokens import default_token_generator
+
+from django.core.mail import EmailMessage
+# def activate():
+    
+#     return redirect('home')
+# def activateEmail(request, user, to_email):
+#     mail_subject=" Activate your account "
+#     message= render_to_string("template_activate_account.html",{
+#     'user':user.username,
+#     'domain':get_current_site(request).domain,
+#     'uid':urlsafe_base64_encode(force_bytes(user.pk)),
+#     'token':account_activation_token.make_token(user),
+#     'protocol':'https' if request.is_secure() else 'http'})
+#     email=EmailMessage(mail_subject, message, to=(to_email))
+#     if email.send():
+#         message.success(request, f'Dear <b>{user}</b>, please go to your email <b> {to_email}</b> inbox and click on \
+#             recieved activation link to confirm and complete the registration')
+#     else:
+#         message.error(request, f'problem sending email to {to_email}, check if you typed it correctly')
+
 
 def registration_view(request):
     customer_form = CustomerForm()
@@ -187,6 +217,10 @@ def contains_personal_info(username, password):
             return True
 
     return False
+
+
+
+
 
 
 
@@ -268,8 +302,8 @@ def update_discount_view(request):
     print(action, orderId)
     if action == 'add-discount' :
         if order.used_discount_points <3 and order.used_discount_points>=0:
-             order.used_discount_points = (order.used_discount_points + 1)
-             customer.reward_point = (customer.reward_point-1)
+            order.used_discount_points = (order.used_discount_points + 1)
+            customer.reward_point = (customer.reward_point-1)
 
         
         

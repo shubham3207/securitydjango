@@ -20,6 +20,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from pages.views import *
+
 from products.views import *
 
 from customer.views import *
@@ -35,7 +36,9 @@ from notification.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', login_view, name='login'),
+
     path('register/', registration_view, name='register'),
+    # path('activate/<uidb46>/<token>', activate, name='activate'),
     path('', homepage_view, name='home'),
     path('contact/', contact, name='contact'),
     path('product/<int:id>/', product_view, name='product'),

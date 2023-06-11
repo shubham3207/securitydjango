@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.core.mail',
 
     'projects.apps.ProjectsConfig',
 
@@ -60,6 +61,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    
    
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -101,6 +103,15 @@ DATABASES = {
     }
 }
 
+# Email Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587  # Replace with your email server's port number
+EMAIL_HOST_USER = 'shubham.sapkota1@gmail.com'  # Replace with your email address
+EMAIL_HOST_PASSWORD = 'yoiinooiewqykgda'  # Replace with your email password
+EMAIL_USE_TLS = True  # Set it to False if you are using SSL
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -137,10 +148,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
 STATICFILES_DIRS = [
     str(os.path.join(BASE_DIR, 'static')),
 ]
+
+
+
 
 MEDIA_URL = '/img/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img/images')
